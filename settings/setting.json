@@ -3,4 +3,5 @@
     "memberLimit": 5,
     "groupLimit": 5,
     "prefix": "#"
+    "vhtearkey": "API-KEY" //Kalian Bisa Mendapatkannya di https://vhtear.com/
   }
