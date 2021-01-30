@@ -1229,7 +1229,20 @@ module.exports = HandleMsg = async (aruga, message) => {
                 await aruga.reply(from, `${res}`, id)
             })
             break
-
+             case 'dadu':
+                fetch('https://raw.githubusercontent.com/rashidsiregar28/data/main/Dadu')
+                .then(res => res.text())
+                .then(body => {     
+                        const dadugerak = body.split('\n')
+                        const dadugerakx = dadugerak[Math.floor(Math.random() * dadugerak.length)]
+                        aruga.sendStickerfromUrl(from, dadugerakx)
+                    })
+                    .catch(async (err) => {
+                        console.error(err)
+                        await aruga.reply(from, 'Error!', id)
+                    })
+            break
+			
 		//Fun Menu
     case 'tod':
     aruga.reply(from, 'Sebelum bermain berjanjilah akan melaksanakan apapun perintah yang diberikan.\n\nSilahkan Pilih:\n➥ #truth\n➥ #dare', id)
